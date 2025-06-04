@@ -22,7 +22,9 @@ A modern, responsive website for Spectronic Technology, showcasing our services,
 ## Project Structure
 
 
-## Our Clients
+## Our Logo
+![Logo](images/spectronic.jpg)
+
 
 ## Our Clients
 
