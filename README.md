@@ -20,6 +20,8 @@ A modern, responsive website for Spectronic Technology, showcasing our services,
 - Google Fonts (Plus Jakarta Sans)
 
 ## Project Structure
+
+
 ## Our Clients
 
 ![Kenwood](images/clients/kenwood.png)
