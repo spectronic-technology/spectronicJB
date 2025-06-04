@@ -24,19 +24,9 @@ A modern, responsive website for Spectronic Technology, showcasing our services,
 
 ## Our Clients
 
-![Kenwood](images/clients/kenwood.png)
-![Honeywell](images/clients/honeywell.jpg)
-![PNE](images/clients/pne.jpg)
-![Flextronics](images/clients/flextronics.png)
-![Dyson](images/clients/dyson.png)
-![VTech](images/clients/vrtech.png)
-![Micron](images/clients/micron.png)
-![Panasonic](images/clients/panasonic.png)
-![Kaifa](images/clients/kaifa.jpg)
-![Shima](images/clients/shima.jpg)
-![Sanmina](images/clients/sanmina.png)
-![Seagate](images/clients/seagate.png)
-![BMM](images/clients/bmm.png)
-![PCI](images/clients/pci.png)
-![OSI Electronics](images/clients/osi.png)
-![Beyonics](images/clients/beyonics.png)
+## Our Clients
+
+![Kenwood](images/clients/kenwood.png) ![Honeywell](images/clients/honeywell.jpg) ![PNE](images/clients/pne.jpg) ![Flextronics](images/clients/flextronics.png)
+![Dyson](images/clients/dyson.png) ![VTech](images/clients/vrtech.png) ![Micron](images/clients/micron.png) ![Panasonic](images/clients/panasonic.png)
+![Kaifa](images/clients/kaifa.jpg) ![Shima](images/clients/shima.jpg) ![Sanmina](images/clients/sanmina.png) ![Seagate](images/clients/seagate.png)
+![BMM](images/clients/bmm.png) ![PCI](images/clients/pci.png) ![OSI Electronics](images/clients/osi.png) ![Beyonics](images/clients/beyonics.png)
