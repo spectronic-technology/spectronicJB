@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Spectronic Technology</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0052cc;
+            --secondary: #00a3ff;
+            --dark: #0a1f44;
+            --light: #ffffff;
+            --gray: #f0f5ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--dark);
+    }
+
+    .logo-highlight {
+        font-size: 1.8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .nav-menu {
+        display: flex;
+        gap: 3rem;
+        list-style: none;
+    }
+
+    .nav-link {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.05rem;
+        padding: 0.5rem 0;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+        width: 30px;
+        height: 2px;
+        background: var(--dark);
+        transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: flex;
+        }
+    }
+
+    .about-hero {
+            height: 60vh;
+            background: #9CC7F0;  /* Light blue background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--dark);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #ffffff;
+            opacity: 0.9;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease 0.2s forwards;
+        }
+        .about-section {
+            padding: 8rem 0;
+            background: var(--light);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--gray);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.5rem;
+        }
+
+        .feature-content h3 {
+            color: var(--dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-content p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .journey-section {
+            padding: 8rem 0;
+            background: var(--gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 4rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 4rem;
+            position: relative;
+            width: 50%;
+            padding-right: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            padding-right: 0;
+            padding-left: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            right: -10px;
+            top: 0;
+            border: 4px solid var(--light);
+            box-shadow: 0 0 0 4px var(--primary);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -10px;
+        }
+
+        .timeline-content {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: var(--light);
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content h3 {
+            color: var(--dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 2rem;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                padding-left: 2rem;
+            }
+
+            .timeline-dot {
+                left: -10px;
+                right: auto;
+            }
+
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: -10px;
+            }
+        }
+    </style>
+    <style>
+        .offices-section {
+            padding: 8rem 0;
+            background: var(--light);
+        }
+
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .office-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .office-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .office-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+
+        .office-icon i {
+            font-size: 2.5rem;
+            color: var(--light);
+        }
+
+        .office-card h3 {
+            color: var(--dark);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .office-location {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .office-details {
+            text-align: left;
+        }
+
+        .office-details p {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #64748b;
+        }
+
+        .office-details i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .offices-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .offices-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        </style>
+        <style>
+            .clients-section {
+                padding: 8rem 0;
+                background: var(--gray);
+            }
+    
+            .clients-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 3rem;
+                margin-top: 4rem;
+            }
+    
+            .client-card {
+                background: var(--light);
+                padding: 2rem;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+    
+            .client-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            }
+    
+            .client-card img {
+                max-width: 150px;
+                height: auto;
+                /* Remove the grayscale filter */
+                opacity: 1;
+                transition: all 0.3s ease;
+            }
+    
+            .client-card:hover img {
+                transform: scale(1.05);
+            }
+    
+            @media (max-width: 768px) {
+                .clients-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        </style>
+        <style>
+            .footer {
+      background: #9CC7F0;
+      color: var(--dark);
+      padding: 2rem 0;
+  }
+
+  .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+  }
+
+  .footer-section {
+      margin-bottom: 1rem;
+  }
+
+  .footer-section h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--dark);
+  }
+
+  .footer-section ul {
+      list-style: none;
+  }
+
+  .footer-section ul li {
+      margin-bottom: 0.5rem;
+  }
+
+  .footer-section ul li a {
+      color: var(--dark);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 0.9rem;
+  }
+
+  .footer-section.contact-info p,
+  .footer-section.operation-hours p {
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+  }
+
+  .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+  }
+
+  .social-links a {
+      color: var(--dark);
+      font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+      .footer-content {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  }
+
+  @media (max-width: 480px) {
+      .footer-content {
+          grid-template-columns: 1fr;
+      }
+  }
+</style>
+        <style>
+            .logo {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #0066ff;
+                text-decoration: none;
+                letter-spacing: -0.5px;
+            }
+        
+            .navbar {
+                background: #ffffff;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+        
+            .nav-container {
+                padding: 1rem 2rem;
+            }
+        </style>
+        <style>
+            .map-container {
+                width: 100%;
+                overflow: hidden;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+        
+            .map-container:hover {
+                transform: translateY(-5px);
+            }
+        </style>
+        <style>
+            .contact-icon {
+                font-size: 1.25rem;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+    
+            .fa-envelope { color: #EA4335; }
+            .fa-phone { color: #34A853; }
+            .fa-whatsapp { color: #25D366; }
+            .fa-map-marker-alt { color: #4285F4; }
+    
+            .info-card a:hover .contact-icon {
+                transform: scale(1.1);
+                transition: transform 0.3s ease;
+            }
+        </style>
+        <style>
+            .contact-section {
+                background: #051c42;
+                padding: 6rem 0;
+            }
+        
+            .info-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+        
+            .info-card {
+                background: #ffffff;
+                padding: 3rem;
+                border-radius: 24px;
+                margin-bottom: 0;
+            }
+        
+            .info-card h3 {
+                color: #0066ff;
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+            }
+        
+            .info-card p {
+                font-size: 1.1rem;
+                line-height: 2;
+                margin-bottom: 0.5rem;
+            }
+        
+            .info-card p:first-of-type {
+                color: #666;
+                margin-bottom: 0.25rem;
+            }
+        
+            .info-card a, 
+            .info-card p:last-of-type {
+                color: #333;
+                font-weight: 500;
+            }
+        
+            .info-card a {
+                text-decoration: none;
+            }
+        
+            @media (max-width: 768px) {
+                .info-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .social-links a.whatsapp-link {
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a.whatsapp-link:hover {
+            color: #25D366;
+            transform: translateY(-2px);
+        }
+        .trusted-brands {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+
+        .brands-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .brands-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .brand-item {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.8s ease forwards;
+        }
+
+        .brand-item img {
+            max-width: 150px;
+            height: auto;
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+        }
+
+        .brand-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Add animation delay for each brand */
+        .brand-item:nth-child(1) { animation-delay: 0.1s; }
+        .brand-item:nth-child(2) { animation-delay: 0.2s; }
+        .brand-item:nth-child(3) { animation-delay: 0.3s; }
+        .brand-item:nth-child(4) { animation-delay: 0.4s; }
+        .brand-item:nth-child(5) { animation-delay: 0.5s; }
+        .brand-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        </style>
+        
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo">Spectronic Technology Sdn Bhd</div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="about-hero">
+        <div class="hero-content">
+            <h1>Pioneering Precision Engineering</h1>
+            <p>Crafting the future of manufacturing excellence</p>
+        </div>
+    </div>
+
+    <section class="journey-section">
+        <div class="container">
+            <h2 class="section-title">Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1997</div>
+                        <h3>Spectronic Technology Pte Ltd</h3>
+                        <p>Established with the vision to provide innovative solutions for the electronics industry's engineering and operational challenges.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">1999</div>
+                        <h3>Spectronic Technology Sdn Bhd</h3>
+                        <p>Expanded operations to Malaysia in response to growing market opportunities.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2009</div>
+                        <h3>Spectronic Manufacturing Sdn Bhd</h3>
+                        <p>Established dedicated manufacturing facilities to enhance production capabilities.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2013</div>
+                        <h3>Spectronic Precision Sdn Bhd</h3>
+                        <p>Launched specialized precision manufacturing division.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="offices-section">
+        <div class="container">
+            <h2 class="section-title">Our Global Presence</h2>
+            <div class="offices-grid">
+                <div class="office-card" data-aos="fade-up">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Main Office - Johor</h3>
+                    <p class="office-location">Johor Bahru, Malaysia</p>
+                
+                </div>
+
+                <div class="office-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Singapore Office</h3>
+                    <p class="office-location">Singapore</p>
+                    
+                </div>
+
+                <div class="office-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Batam Office</h3>
+                    <p class="office-location">Batam, Indonesia</p>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="trusted-brands">
+    <section class="clients-section">
+        <div class="container">
+            <h2 class="section-title">Trusted by Industry Leaders</h2>
+            <div class="clients-grid">
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/celestica.png" alt="Celestica">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/venture.jpg" alt="Venture">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/dso.png" alt="DSO">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/edmi.png" alt="EDMI">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/kenwood.png" alt="Kenwood">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/honeywell.jpg" alt="Honeywell">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/pne.jpg" alt="PNE PCB">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/flextronics.png" alt="Flextronics">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/dyson.png" alt="Dyson">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/vrtech.png" alt="VTech">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/micron.png" alt="Micron">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/panasonic.png" alt="Panasonic">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/kaifa.jpg" alt="Kaifa">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/shima.jpg" alt="Shima">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/sanmina.png" alt="Sanmina">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/seagate.png" alt="Seagate">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/bmm.png" alt="BMM">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/pci.png" alt="Pci">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/osi.png" alt="Osi Electronics">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/beyonics.png" alt="beyonic">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/pepperl.png" alt="Pepperl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    </script>
+           <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="mailto:admin@spectronic.com.sg" class="email-link">
+                            <i class="fas fa-envelope"></i>
+                            admin@spectronic.com.my
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100094888840564" target="_blank" title="Follow us on Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://wa.me/+60197557592" target="_blank" title="Contact us on WhatsApp" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section contact-info">
+                    <h4>Contact Information</h4>
+                    <p>Email: admin@spectronic.com.sg</p>
+                <p>Phone: +6019 755 7592</p>
+                </div>
+                
+                <div class="footer-section operation-hours">
+                    <h4>Operation Hours</h4>
+                    <p>Monday - Friday</p>
+                    <p>8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
