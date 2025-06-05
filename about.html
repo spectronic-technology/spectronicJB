@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Spectronic Technology</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -9,19 +10,21 @@
     <style>
         :root {
             --primary: #0052cc;
-            --secondary: #00a3ff;
+            --gradient-start: #0052cc;
+            --gradient-end: #00a3ff;
             --dark: #0a1f44;
             --light: #ffffff;
             --gray: #f0f5ff;
         }
 
-        * {
+
+       * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        .navbar {
+     .navbar {
             position: fixed;
             width: 100%;
             background: rgba(255, 255, 255, 0.9);
@@ -40,6 +43,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
           /* Add these CSS styles */
         .hamburger {
             display: none;
@@ -84,10 +88,18 @@
             }
         }
 
-    .logo {
-                font-size: 1.2rem;
-                max-width: 60%;
-            }
+   .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
         .logo img {
                 height: 30px;
             }
@@ -162,7 +174,8 @@
             position: relative;
         }
 
-        .nav-menu a::after {
+
+       .nav-menu a::after {
             content: '';
             position: absolute;
             bottom: -5px;
