@@ -22,605 +22,113 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        /* Navbar styles (same as about.html) */
-               .navbar {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
+        body {
+            line-height: 1.6;
             color: var(--dark);
-            text-decoration: none;
-        }
-
-       .nav-menu {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-        .hamburger {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        bac/* Add these CSS styles */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: var(--primary);
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: rgba(255, 255, 255, 0.95);
-                padding: 1rem 0;
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu a {
-                padding: 0.5rem 0;
-            }
-        }
-        .nav-menu a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-
-        .nav-menu a:hover {
-            color: var(--primary);
-        }
-        /* Add these keyframes at the top of the style section */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Services Hero Section */
-        .services-hero {
-            height: 60vh;
-            background: #9CC7F0;  /* Light blue background */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--light);
             padding-top: 80px;
         }
 
-        .hero-content {
-            max-width: 800px;
-            padding: 0 2rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 1s ease;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: #ffffff;
-            opacity: 0.9;
-            font-weight: 500;
-            animation: fadeInUp 1s ease 0.2s forwards;
-            opacity: 0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Services Grid */
-        .services-section {
-            padding: 8rem 0;
-            background: var(--light);
-        }
-
-        .container {
+        .services-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .services-section {
-            padding: 6rem 2rem;
-            background: var(--light);
-        }
-
-        .service-card {
-            background: var(--light);
-            border-radius: 12px;
             padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        .service-section {
+            margin-bottom: 3rem;
         }
 
         .service-title {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--dark);
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary);
         }
 
         .service-description {
-            color: #4a5568;
-            font-size: 1.1rem;
-            line-height: 1.6;
             margin-bottom: 1.5rem;
+            font-size: 1.1rem;
         }
 
-        .service-features {
+        .service-list {
             list-style: none;
-            padding: 0;
+            margin-left: 1rem;
         }
 
-        .service-features li {
-            padding: 0.5rem 0;
-            color: #2d3748;
-            font-size: 1.05rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .service-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
         }
 
-        .service-features li:before {
+        .service-list li:before {
             content: '✓';
+            position: absolute;
+            left: 0;
             color: var(--primary);
-            font-weight: bold;
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-     <style>
-                  .footer {
-            background: #9CC7F0;
-            color: var(--dark);
-            padding: 2rem 0;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .footer-section {
-            margin-bottom: 1rem;
-        }
-
-        .footer-section h4 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section ul li a {
-            color: var(--dark);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .footer-section.contact-info p,
-        .footer-section.operation-hours p {
-            color: var(--dark);
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .social-links a {
-            color: var(--dark);
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <style>
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #0066ff;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-    
-        .navbar {
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-    
-        .nav-container {
-            padding: 1rem 2rem;
-        }
-    </style>
-    <style>
-        .map-container {
-            width: 100%;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-    
-        .map-container:hover {
-            transform: translateY(-5px);
-        }
-    </style>
-    <style>
-        .contact-icon {
-            font-size: 1.25rem;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-
-        .fa-envelope { color: #EA4335; }
-        .fa-phone { color: #34A853; }
-        .fa-whatsapp { color: #25D366; }
-        .fa-map-marker-alt { color: #4285F4; }
-
-        .info-card a:hover .contact-icon {
-            transform: scale(1.1);
-            transition: transform 0.3s ease;
-        }
-    </style>
-    <style>
-        .contact-section {
-            background: #051c42;
-            padding: 6rem 0;
-        }
-    
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-        }
-    
-        .info-card {
-            background: #ffffff;
-            padding: 3rem;
-            border-radius: 24px;
-            margin-bottom: 0;
-        }
-    
-        .info-card h3 {
-            color: #0066ff;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-        }
-    
-        .info-card p {
-            font-size: 1.1rem;
-            line-height: 2;
-            margin-bottom: 0.5rem;
-        }
-    
-        .info-card p:first-of-type {
-            color: #666;
-            margin-bottom: 0.25rem;
-        }
-    
-        .info-card a, 
-        .info-card p:last-of-type {
-            color: #333;
-            font-weight: 500;
-        }
-    
-        .info-card a {
-            text-decoration: none;
-        }
-    
-        @media (max-width: 768px) {
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        .social-links a.whatsapp-link {
-            color: var(--dark);
-            transition: all 0.3s ease;
-        }
-
-        .social-links a.whatsapp-link:hover {
-            color: #25D366;
-            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-
             <a href="index.html" class="logo">
-                <div class="logo">Spectronic Technology Sdn Bhd</div>
+                <span class="logo-text">Spectronic</span>
+                <span class="logo-highlight">Technology</span>
             </a>
-              <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="services-hero">
-        <div class="hero-content">
-            <h1>Our Services</h1>
-            <p>Comprehensive solutions for precision engineering and manufacturing excellence</p>
+    <div class="services-container">
+        <div class="service-section">
+            <h2 class="service-title">CAD-CAM Design</h2>
+            <p class="service-description">Professional CAD-CAM design and editing services for manufacturing templates and pallets.</p>
+            <ul class="service-list">
+                <li>Template Design & Editing</li>
+                <li>Pallet Configuration</li>
+                <li>3D Modeling</li>
+                <li>Technical Documentation</li>
+            </ul>
+        </div>
+
+        <div class="service-section">
+            <h2 class="service-title">CNC Milling Machine Services</h2>
+            <p class="service-description">High-precision CNC milling services with advanced machinery and expert operators.</p>
+            <ul class="service-list">
+                <li>Precision Machining</li>
+                <li>Complex Part Manufacturing</li>
+                <li>Custom Components</li>
+                <li>Quality Control</li>
+            </ul>
+        </div>
+
+        <div class="service-section">
+            <h2 class="service-title">Inspection Templates & Vacuum Blocks</h2>
+            <p class="service-description">Specialized templates and vacuum blocks for precise inspection and printing processes.</p>
+            <ul class="service-list">
+                <li>Custom Inspection Templates</li>
+                <li>Printer Vacuum Blocks</li>
+                <li>Quality Verification</li>
+                <li>Process Optimization</li>
+            </ul>
+        </div>
+
+        <div class="service-section">
+            <h2 class="service-title">Fixture Manufacturing</h2>
+            <p class="service-description">Custom fixture design and manufacturing for specialized industrial applications.</p>
+            <ul class="service-list">
+                <li>Custom Fixture Design</li>
+                <li>Precision Manufacturing</li>
+                <li>Quality Assurance</li>
+                <li>Technical Support</li>
+            </ul>
         </div>
     </div>
-
-    <section class="services-section">
-        <div class="container">
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-drafting-compass"></i>
-                    </div>
-                    <h3>CAD-CAM Template & Pallet Editing</h3>
-                    <p>Professional CAD-CAM design and editing services for manufacturing templates and pallets.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Template Design & Editing</li>
-                        <li><i class="fas fa-check"></i> Pallet Configuration</li>
-                        <li><i class="fas fa-check"></i> 3D Modeling</li>
-                        <li><i class="fas fa-check"></i> Technical Documentation</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>CNC Milling Machine Services</h3>
-                    <p>High-precision CNC milling services with advanced machinery and expert operators.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Precision Machining</li>
-                        <li><i class="fas fa-check"></i> Complex Part Manufacturing</li>
-                        <li><i class="fas fa-check"></i> Custom Components</li>
-                        <li><i class="fas fa-check"></i> Quality Control</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>Inspection Templates & Vacuum Blocks</h3>
-                    <p>Specialized templates and vacuum blocks for precise inspection and printing processes.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Custom Inspection Templates</li>
-                        <li><i class="fas fa-check"></i> Printer Vacuum Blocks</li>
-                        <li><i class="fas fa-check"></i> Quality Verification</li>
-                        <li><i class="fas fa-check"></i> Process Optimization</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Fixture Manufacturing</h3>
-                    <p>Custom fixture design and manufacturing for specialized industrial applications.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Custom Fixture Design</li>
-                        <li><i class="fas fa-check"></i> Precision Manufacturing</li>
-                        <li><i class="fas fa-check"></i> Assembly Integration</li>
-                        <li><i class="fas fa-check"></i> Testing & Validation</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3>PCB Assembly & Lasercut Stencils</h3>
-                    <p>Advanced PCB assembly services with high-precision laser-cut stencil technology.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> DEK Printer Technology</li>
-                        <li><i class="fas fa-check"></i> Custom Stencil Design</li>
-                        <li><i class="fas fa-check"></i> High-Precision Cutting</li>
-                        <li><i class="fas fa-check"></i> Quality Assurance</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <h3>Precision Machining</h3>
-                    <p>State-of-the-art precision machining services with advanced CNC equipment.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> CNC Milling</li>
-                        <li><i class="fas fa-check"></i> High-Precision Parts</li>
-                        <li><i class="fas fa-check"></i> Custom Machining</li>
-                        <li><i class="fas fa-check"></i> Industrial Solutions</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Connect With Us</h4>
-                <div class="social-links">
-                    <a href="mailto:info@spectronictech.com" class="email-link">
-                        <i class="fas fa-envelope"></i>
-                        info@spectronictech.com
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=100094888840564" target="_blank" title="Follow us on Facebook">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://wa.me/+60197557592" target="_blank" title="Contact us on WhatsApp" class="whatsapp-link">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-section contact-info">
-                <h4>Contact Information</h4>
-                <p>Email: admin@spectronic.com.sg</p>
-                <p>Phone: +6019 755 7592</p>
-            </div>
-            
-            <div class="footer-section operation-hours">
-                <h4>Operation Hours</h4>
-                <p>Monday - Friday</p>
-                <p>8:00 AM - 6:00 PM</p>
-            </div>
-        </div>
-    </footer>
-   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
-    });
-</script>
 </body>
 </html>
