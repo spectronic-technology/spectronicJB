@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Spectronic Technology</title>
+    <title>Contact Us - Spectronic Technology</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #0052cc;
-            --gradient-start: #0052cc;
-            --gradient-end: #00a3ff;
-            --dark: #0a1f44;
-            --light: #ffffff;
-            --gray: #f0f5ff;
-        }
+         :root {
+        --primary: #7EB2DD;
+        --secondary: #A5CAE7;
+        --dark: #2B4C7E;
+        --light: #ffffff;
+        --gray: #EDF3F8;
+    }
 
 
        * {
@@ -27,15 +25,16 @@
      .navbar {
             position: fixed;
             width: 100%;
-            background: rgba(255, 255, 255, 0.9);
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             z-index: 1000;
-            padding: 1.2rem 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
         }
 
-
-   .nav-container {
+        .nav-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
@@ -43,49 +42,55 @@
             justify-content: space-between;
             align-items: center;
         }
-
-          /* Add these CSS styles */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0.5rem;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
         }
 
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background: var(--primary);
-            margin: 5px 0;
-            transition: all 0.3s ease;
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+.hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        z-index: 1000;
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 1rem;
-            }
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: rgba(255, 255, 255, 0.95);
-                padding: 1rem 0;
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu a {
-                padding: 0.5rem 0;
-            }
+        .nav-menu a:hover {
+            color: var(--primary);
         }
 
    .logo {
@@ -118,23 +123,7 @@
         -webkit-text-fill-color: transparent;
     }
 
-    .hamburger {
-                display: block;
-                z-index: 1001;
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
-
+    
             .nav-menu {
                 position: fixed;
                 top: 0;
