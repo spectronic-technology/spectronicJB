@@ -22,19 +22,33 @@
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-     .navbar {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 1rem 0;
+     :root {
+            --primary: #0052cc;
+            --gradient-start: #0052cc;
+            --gradient-end: #00a3ff;
+            --dark: #0a1f44;
+            --light: #ffffff;
+            --gray: #f0f5ff;
         }
 
-        .nav-container {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
@@ -42,52 +56,70 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo {
+
+       .logo {
             font-size: 1.8rem;
             font-weight: 800;
-            color: var(--dark);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+       .logo img {
+            height: 40px;
+            width: auto;
+            transition: transform 0.3s ease;
         }
 
-        .nav-menu {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
+        .logo:hover img {
+            transform: scale(1.05);
         }
-.hamburger {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
+         .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
 
     @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        z-index: 1000;
-        border-radius: 10px;
-        padding: 1rem;
-      }
+            .hamburger {
+                display: block;
+            }
 
-      .nav-links.show {
-        display: flex;
-      }
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 1rem 0;
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
 
-      .hamburger {
-        display: block;
-      }
-    }
-        .nav-menu a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu a {
+                padding: 0.5rem 0;
+            }
         }
+
 
         .nav-menu a:hover {
             color: var(--primary);
@@ -964,23 +996,25 @@
         
 </head>
 <body>
-     <nav class="navbar">
+   <nav class="navbar">
+       
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-text">Spectronic</span>
-                <span class="logo-highlight">Technology</span>
-            </a>
+    <img src="spectronic.jpg" alt="Spectronic Technology Logo">
+    <div>Spectronic Technology Sdn Bhd</div>
+</a>
+                
+             <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link active">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
         </div>
     </nav>
     <div class="about-hero">
