@@ -239,6 +239,65 @@
             display: flex;
         }
     }
+        .global-presence {
+    padding: 8rem 0;
+    background: var(--light);
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.office-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.office-card {
+    background: var(--light);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.office-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.office-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.office-card .location {
+    font-size: 1.1rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .office-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
 
     .about-hero {
             height: 60vh;
@@ -981,39 +1040,25 @@
             </div>
         </div>
     </section>
-    <section class="offices-section">
-        <div class="container">
-            <h2 class="section-title">Our Global Presence</h2>
-            <div class="offices-grid">
-                <div class="office-card" data-aos="fade-up">
-                    <div class="office-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Main Office - Johor</h3>
-                    <p class="office-location">Johor Bahru, Malaysia</p>
-                
-                </div>
-
-                <div class="office-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="office-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Singapore Office</h3>
-                    <p class="office-location">Singapore</p>
-                    
-                </div>
-
-                <div class="office-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="office-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3>Batam Office</h3>
-                    <p class="office-location">Batam, Indonesia</p>
-                   
-                </div>
+   <section class="global-presence">
+    <div class="container">
+        <h2 class="section-title">Our Global Presence</h2>
+        <div class="office-grid">
+            <div class="office-card">
+                <h3>Main Office - Johor</h3>
+                <p class="location">Johor Bahru, Malaysia</p>
+            </div>
+            <div class="office-card">
+                <h3>Singapore Office</h3>
+                <p class="location">Singapore</p>
+            </div>
+            <div class="office-card">
+                <h3>Batam Office</h3>
+                <p class="location">Batam, Indonesia</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     <section class="trusted-brands">
     <section class="clients-section">
         <div class="container">
