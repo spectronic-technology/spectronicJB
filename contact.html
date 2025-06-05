@@ -54,6 +54,35 @@
             gap: 3rem;
             list-style: none;
         }
+        .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        z-index: 1000;
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
 
         .nav-menu a {
             color: var(--dark);
@@ -715,6 +744,7 @@
 </head>
 <body>
     <nav  class="nav-container">
+         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <a href="index.html" class="logo">
             Spectronic Technology Sdn Bhd
         </a>
@@ -840,5 +870,12 @@
             </div>
         </div>
     </footer>
+     <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('show');
+    }
+  </script>
+
 </body>
 </html>
