@@ -92,9 +92,46 @@
       }
 
       .hamburger {
-        display: block;
-      }
-    }
+            display: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 1rem 0;
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu a {
+                padding: 0.5rem 0;
+            }
+        }
 
         .nav-menu {
             display: flex;
@@ -487,14 +524,18 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+       
         <div class="nav-container">
             <a href="index.html" class="logo">
     <img src="spectronic.jpg" alt="Spectronic Technology Logo">
     <div>Spectronic Technology Sdn Bhd</div>
 </a>
                 
-            </a>
+             <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -580,11 +621,20 @@
             </div>
         </div>
     </footer>
-    <script>
-    function toggleMenu() {
-      const nav = document.querySelector('.nav-links');
-      nav.classList.toggle('show');
-    }
-  </script>
+   <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
 </body>
 </html>
