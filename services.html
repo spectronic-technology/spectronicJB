@@ -75,11 +75,7 @@
         .nav-menu a:hover {
             color: var(--primary);
         }
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        
         .hamburger {
             display: none;
             cursor: pointer;
@@ -122,96 +118,102 @@
             }
         }
 
-        .service-section {
-            margin-bottom: 3rem;
+        .services-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
         }
 
-        .service-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .service-description {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .service-list {
-            list-style: none;
-            margin-left: 1rem;
-        }
-
-        .service-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .service-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-        }
-         /* Enhanced Service Section Styles */
         .services-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 0 2rem;
         }
 
-        .service-section {
-            margin-bottom: 4rem;
-            padding: 2rem;
-            background: var(--light);
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .service-section:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-title {
-            font-size: 2rem;
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .service-description {
-            font-size: 1.1rem;
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .service-list {
-            list-style: none;
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .service-list li {
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            padding-left: 2rem;
-            font-size: 1.05rem;
-            color: #2d3748;
-            line-height: 1.6;
+            overflow: hidden;
         }
 
-        .service-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 82, 204, 0.1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .feature-list li i {
             color: var(--primary);
-            font-weight: bold;
+            margin-right: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
         }
 
         <style>
@@ -301,51 +303,57 @@
     </div>
 </nav>
 
+    <section class="services-section">
     <div class="services-container">
-        <div class="service-section">
-            <h2 class="service-title">CAD-CAM Design</h2>
-            <p class="service-description">Professional CAD-CAM design and editing services for manufacturing templates and pallets.</p>
-            <ul class="service-list">
-                <li>Template Design & Editing</li>
-                <li>Pallet Configuration</li>
-                <li>3D Modeling</li>
-                <li>Technical Documentation</li>
-            </ul>
-        </div>
-
-        <div class="service-section">
-            <h2 class="service-title">CNC Milling Machine Services</h2>
-            <p class="service-description">High-precision CNC milling services with advanced machinery and expert operators.</p>
-            <ul class="service-list">
-                <li>Precision Machining</li>
-                <li>Complex Part Manufacturing</li>
-                <li>Custom Components</li>
-                <li>Quality Control</li>
-            </ul>
-        </div>
-
-        <div class="service-section">
-            <h2 class="service-title">Inspection Templates & Vacuum Blocks</h2>
-            <p class="service-description">Specialized templates and vacuum blocks for precise inspection and printing processes.</p>
-            <ul class="service-list">
-                <li>Custom Inspection Templates</li>
-                <li>Printer Vacuum Blocks</li>
-                <li>Quality Verification</li>
-                <li>Process Optimization</li>
-            </ul>
-        </div>
-
-        <div class="service-section">
-            <h2 class="service-title">Fixture Manufacturing</h2>
-            <p class="service-description">Custom fixture design and manufacturing for specialized industrial applications.</p>
-            <ul class="service-list">
-                <li>Custom Fixture Design</li>
-                <li>Precision Manufacturing</li>
-                <li>Quality Assurance</li>
-                <li>Technical Support</li>
-            </ul>
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <h3>Custom Inspection Templates</h3>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Specialized templates</li>
+                    <li><i class="fas fa-check"></i> Quality standards</li>
+                    <li><i class="fas fa-check"></i> Process documentation</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-print"></i>
+                </div>
+                <h3>Printer Vacuum Blocks</h3>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Precision engineering</li>
+                    <li><i class="fas fa-check"></i> Custom solutions</li>
+                    <li><i class="fas fa-check"></i> Optimal performance</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-check-double"></i>
+                </div>
+                <h3>Quality Verification</h3>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Thorough testing</li>
+                    <li><i class="fas fa-check"></i> Detailed reports</li>
+                    <li><i class="fas fa-check"></i> Quality assurance</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Process Optimization</h3>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check"></i> Efficiency analysis</li>
+                    <li><i class="fas fa-check"></i> Workflow improvement</li>
+                    <li><i class="fas fa-check"></i> Performance tracking</li>
+                </ul>
+            </div>
         </div>
     </div>
+</section>
        <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
