@@ -8,14 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-          :root {
-            --primary: #0052cc;
-            --gradient-start: #0066ff;
-            --gradient-end: #0052cc;
-            --dark: #0a1f44;
-            --light: #ffffff;
-            --gray: #f0f5ff;
-        }
+        :root {
+        --primary: #7EB2DD;
+        --secondary: #A5CAE7;
+        --dark: #2B4C7E;
+        --light: #ffffff;
+        --gray: #EDF3F8;
+    }
 
         * {
             margin: 0;
@@ -24,19 +23,16 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        body {
-            line-height: 1.6;
-            color: var(--dark);
-            padding-top: 80px;
-        }
-         .navbar {
+        .navbar {
             position: fixed;
             width: 100%;
-            background: rgba(255, 255, 255, 0.98);
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             z-index: 1000;
             padding: 1rem 0;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
         }
 
         .nav-container {
@@ -49,121 +45,56 @@
         }
 
         .logo {
-            font-size: 1.6rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
         }
 
         .nav-menu {
             display: flex;
-            gap: 2.5rem;
+            gap: 3rem;
             list-style: none;
-            margin: 0;
-            padding: 0;
         }
+        .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        z-index: 1000;
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
 
         .nav-menu a {
             color: var(--dark);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
+            font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .nav-menu a:hover {
             color: var(--primary);
         }
-        
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: var(--primary);
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-
-    @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: rgba(255, 255, 255, 0.95);
-                padding: 1rem 0;
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu a {
-                padding: 0.5rem 0;
-            }
-        }
-       
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: var(--primary);
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-
-
-    @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: rgba(255, 255, 255, 0.95);
-                padding: 1rem 0;
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-menu a {
-                padding: 0.5rem 0;
-            }
-        }
-
-    .nav-menu a:hover {
-        color: var(--primary);
-    }
 
     nav ul.show {
         display: block;
