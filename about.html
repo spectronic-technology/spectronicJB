@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Spectronic Technology</title>
+    <title>About Us - Spectronic Technology</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-           :root {
-        --primary: #7EB2DD;
-        --secondary: #A5CAE7;
-        --dark: #2B4C7E;
-        --light: #ffffff;
-        --gray: #EDF3F8;
-    }
+        :root {
+            --primary: #0052cc;
+            --secondary: #00a3ff;
+            --dark: #0a1f44;
+            --light: #ffffff;
+            --gray: #f0f5ff;
+        }
 
         * {
             margin: 0;
@@ -21,99 +21,33 @@
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-
         .navbar {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--dark);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-        }
-        .hamburger {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         z-index: 1000;
-        border-radius: 10px;
-        padding: 1rem;
-      }
+        padding: 1rem 0;
+    }
 
-      .nav-links.show {
+    .nav-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
         display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
+        justify-content: space-between;
+        align-items: center;
     }
 
-        .nav-menu a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary);
-        }
-    nav ul.show {
-        display: block;
+    .logo {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
-
-
-   .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo img {
-                height: 30px;
-            }
 
     .logo-text {
         font-size: 1.8rem;
@@ -129,67 +63,61 @@
         -webkit-text-fill-color: transparent;
     }
 
-    
-
-        .global-presence {
-    padding: 8rem 0;
-    background: var(--light);
-}
-
-.section-title {
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--dark);
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.office-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.office-card {
-    background: var(--light);
-    padding: 3rem 2rem;
-    border-radius: 16px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-}
-
-.office-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.office-card h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--dark);
-    margin-bottom: 1rem;
-}
-
-.office-card .location {
-    font-size: 1.1rem;
-    color: var(--primary);
-    font-weight: 500;
-}
-
-@media (max-width: 768px) {
-    .office-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .nav-menu {
+        display: flex;
+        gap: 3rem;
+        list-style: none;
     }
-    
-    .section-title {
-        font-size: 2.5rem;
+
+    .nav-link {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.05rem;
+        padding: 0.5rem 0;
+        position: relative;
+        transition: color 0.3s ease;
     }
-}
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+    .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+        width: 30px;
+        height: 2px;
+        background: var(--dark);
+        transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: flex;
+        }
+    }
 
     .about-hero {
             height: 60vh;
@@ -864,25 +792,22 @@
         
 </head>
 <body>
-  <nav class="navbar">
-       
+    <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-    <img src="spectronic.jpg" alt="Spectronic Technology Logo">
-    <div>Spectronic Technology Sdn Bhd</div>
-</a>
-                
-             <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+                <div class="logo">Spectronic Technology Sdn Bhd</div>
+            </a>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
     <div class="about-hero">
@@ -934,57 +859,120 @@
             </div>
         </div>
     </section>
-   <section class="global-presence">
-    <div class="container">
-        <h2 class="section-title">Our Global Presence</h2>
-        <div class="office-grid">
-            <div class="office-card">
-                <h3>Main Office - Johor</h3>
-                <p class="location">Johor Bahru, Malaysia</p>
-            </div>
-            <div class="office-card">
-                <h3>Singapore Office</h3>
-                <p class="location">Singapore</p>
-            </div>
-            <div class="office-card">
-                <h3>Batam Office</h3>
-                <p class="location">Batam, Indonesia</p>
+    <section class="offices-section">
+        <div class="container">
+            <h2 class="section-title">Our Global Presence</h2>
+            <div class="offices-grid">
+                <div class="office-card" data-aos="fade-up">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Main Office - Johor</h3>
+                    <p class="office-location">Johor Bahru, Malaysia</p>
+                
+                </div>
+
+                <div class="office-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Singapore Office</h3>
+                    <p class="office-location">Singapore</p>
+                    
+                </div>
+
+                <div class="office-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="office-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Batam Office</h3>
+                    <p class="office-location">Batam, Indonesia</p>
+                   
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <section class="trusted-brands">
     <section class="clients-section">
         <div class="container">
             <h2 class="section-title">Trusted by Industry Leaders</h2>
-           <div class="clients-grid">
-  <div class="client-card"><img src="celestica.png" alt="Celestica"></div>
-  <div class="client-card"><img src="venture.jpg" alt="Venture"></div>
-  <div class="client-card"><img src="dso.png" alt="DSO"></div>
-  <div class="client-card"><img src="edmi.png" alt="EDMI"></div>
-  <div class="client-card"><img src="kenwood.png" alt="Kenwood"></div>
-  <div class="client-card"><img src="honeywell.jpg" alt="Honeywell"></div>
-  <div class="client-card"><img src="pne.jpg" alt="PNE PCB"></div>
-  <div class="client-card"><img src="flextronics.png" alt="Flextronics"></div>
-  <div class="client-card"><img src="dyson.png" alt="Dyson"></div>
-  <div class="client-card"><img src="vrtech.png" alt="VTech"></div>
-  <div class="client-card"><img src="micron.png" alt="Micron"></div>
-  <div class="client-card"><img src="panasonic.png" alt="Panasonic"></div>
-  <div class="client-card"><img src="kaifa.jpg" alt="Kaifa"></div>
-  <div class="client-card"><img src="shima.jpg" alt="Shima"></div>
-  <div class="client-card"><img src="sanmina.png" alt="Sanmina"></div>
-  <div class="client-card"><img src="seagate.png" alt="Seagate"></div>
-  <div class="client-card"><img src="bmm.png" alt="BMM"></div>
-  <div class="client-card"><img src="pci.png" alt="Pci"></div>
-  <div class="client-card"><img src="osi.png" alt="Osi Electronics"></div>
-  <div class="client-card"><img src="beyonics.png" alt="Beyonics"></div>
-  <div class="client-card"><img src="pepperl.png" alt="Pepperl"></div>
-</div>
-
+            <div class="clients-grid">
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/celestica.png" alt="Celestica">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/venture.jpg" alt="Venture">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/dso.png" alt="DSO">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/edmi.png" alt="EDMI">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/kenwood.png" alt="Kenwood">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/honeywell.jpg" alt="Honeywell">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/pne.jpg" alt="PNE PCB">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/flextronics.png" alt="Flextronics">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/dyson.png" alt="Dyson">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/vrtech.png" alt="VTech">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/micron.png" alt="Micron">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/panasonic.png" alt="Panasonic">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/kaifa.jpg" alt="Kaifa">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/shima.jpg" alt="Shima">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/sanmina.png" alt="Sanmina">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/seagate.png" alt="Seagate">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/bmm.png" alt="BMM">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/pci.png" alt="Pci">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/osi.png" alt="Osi Electronics">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/beyonics.png" alt="beyonic">
+                </div>
+                <div class="client-card" data-aos="fade-up">
+                    <img src="images/clients/pepperl.png" alt="Pepperl">
+                </div>
+            </div>
         </div>
     </section>
 
-  
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    </script>
            <footer class="footer">
             <div class="footer-content">
                 <div class="footer-section">
@@ -1026,23 +1014,5 @@
                 </div>
             </div>
         </footer>
-        <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-</script>
-
 </body>
 </html>
