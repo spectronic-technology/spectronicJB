@@ -46,7 +46,7 @@
             gap: 3rem;
             list-style: none;
         }
-        .hamburger {
+         .hamburger {
       display: none;
       font-size: 28px;
       cursor: pointer;
@@ -469,21 +469,18 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="spectronic.jpg" alt="Spectronic Technology Logo">
-            </a>
-                <div class="logo">Spectronic Technology Sdn Bhd</div>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+   <nav>
+            
+            <div class="company-name">Spectronic Technology Sdn Bhd</div>
+             <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact Us</a>
+                <div class="datetime" id="datetime"></div>
+            </div>
+        </nav>
 
     <section id="home" class="hero">
         <div class="hero-content">
@@ -562,19 +559,9 @@
         </div>
     </footer>
     <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
-    });
-</script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('show');
+    }
 </body>
 </html>
