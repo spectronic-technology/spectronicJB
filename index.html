@@ -8,23 +8,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #0052cc;
-            --gradient-start: #0052cc;
-            --gradient-end: #00a3ff;
-            --dark: #0a1f44;
-            --light: #ffffff;
-            --gray: #f0f5ff;
-        }
+              :root {
+        --primary: #0052cc;
+        --gradient-start: #0066ff;
+        --gradient-end: #0052cc;
+        --dark: #0a1f44;
+        --light: #ffffff;
+        --gray: #f0f5ff;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
 
-        .navbar {
+    .navbar {
             position: fixed;
             width: 100%;
             background: rgba(255, 255, 255, 0.9);
@@ -34,7 +34,7 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
         }
 
-          .nav-container {
+         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
@@ -43,7 +43,7 @@
             align-items: center;
         }
 
-       .logo {
+        .logo {
             font-size: 1.8rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -65,29 +65,63 @@
             transform: scale(1.05);
         }
 
-        .logo:hover img {
-            transform: scale(1.05);
-        }
-         .hamburger {
-            display: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: var(--primary);
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
+
+    .nav-menu {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-menu a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+        color: var(--primary);
+    }
+
+    nav ul.show {
+        display: block;
+    }
 
 
-    @media (max-width: 768px) {
-            .hamburger {
-                display: block;
+   .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+                height: 30px;
             }
 
+    .logo-text {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--dark);
+    }
+
+    .logo-highlight {
+        font-size: 1.8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    
             .nav-menu {
                 display: none;
                 position: fixed;
@@ -115,21 +149,19 @@
       }
 
      
-         .nav-menu {
-        display: flex;
-        gap: 2.5rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
 
-      .nav-menu a {
-        color: var(--dark);
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1rem;
-        transition: color 0.3s ease;
-    }
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
 
         .nav-menu a::after {
             content: '';
@@ -142,11 +174,36 @@
             transition: width 0.3s ease;
         }
 
-     .nav-menu a:hover {
-        color: var(--primary);
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
     }
-         nav ul.show {
-        display: block;
+
+    .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    .mobile-menu-btn span {
+        width: 30px;
+        height: 2px;
+        background: var(--dark);
+        transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .nav-menu {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: flex;
+        }
     }
         .hero {
             min-height: 100vh;
@@ -574,7 +631,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
+     <nav class="navbar">
        
         <div class="nav-container">
             <a href="index.html" class="logo">
