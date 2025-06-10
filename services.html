@@ -55,6 +55,65 @@
             gap: 3rem;
             list-style: none;
         }
+         .nav-links {
+            display: flex;
+            gap: 3rem;
+        }
+         .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        z-index: 1000;
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: white;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+      
 
         .nav-menu a {
             color: var(--dark);
@@ -62,6 +121,7 @@
             font-weight: 600;
             transition: color 0.3s ease;
         }
+        
 
         .nav-menu a:hover {
             color: var(--primary);
@@ -408,6 +468,7 @@
             <a href="index.html" class="logo">
                 <div class="logo">Spectronic Technology Sdn Bhd</div>
             </a>
+             <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -563,5 +624,11 @@
             mobileMenuBtn.classList.toggle('active');
         });
     </script>
+    <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
