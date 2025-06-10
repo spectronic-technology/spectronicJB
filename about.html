@@ -66,6 +66,30 @@
         display: block;
       }
     }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: white;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+      
 
     .nav-container {
         max-width: 1400px;
@@ -97,91 +121,7 @@
         -webkit-text-fill-color: transparent;
     }
 
-    .nav-menu {
-        display: flex;
-        gap: 3rem;
-        list-style: none;
-    }
-
-    .nav-link {
-        color: var(--dark);
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1.05rem;
-        padding: 0.5rem 0;
-        position: relative;
-        transition: color 0.3s ease;
-    }
-        .hamburger {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        z-index: 1000;
-        border-radius: 10px;
-        padding: 1rem;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-    }
-
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        transition: width 0.3s ease;
-    }
-
-    .nav-link:hover::after,
-    .nav-link.active::after {
-        width: 100%;
-    }
-
-    .mobile-menu-btn {
-        display: none;
-        flex-direction: column;
-        gap: 6px;
-        cursor: pointer;
-    }
-
-    .mobile-menu-btn span {
-        width: 30px;
-        height: 2px;
-        background: var(--dark);
-        transition: all 0.3s ease;
-    }
-
-    @media (max-width: 768px) {
-        .nav-menu {
-            display: none;
-        }
-
-        .mobile-menu-btn {
-            display: flex;
-        }
-    }
-
+   
     .about-hero {
             height: 60vh;
             background: #9CC7F0;  /* Light blue background */
@@ -861,17 +801,13 @@
                 <div class="logo">Spectronic Technology Sdn Bhd</div>
             </a>
             <div class="hamburger" onclick="toggleMenu()">☰</div>
-            <ul class="nav-menu">
+            <ul class="nav-link">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link active">About</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            <div class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+           
         </div>
     </nav>
     <div class="about-hero">
@@ -1078,21 +1014,7 @@
                 </div>
             </div>
         </footer>
-        <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
-    });
-</script>
+      
          <script>
     function toggleMenu() {
       const nav = document.querySelector('.nav-links');
