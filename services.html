@@ -55,35 +55,6 @@
             gap: 3rem;
             list-style: none;
         }
-          .hamburger {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        z-index: 1000;
-        border-radius: 10px;
-        padding: 1rem;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-    }
 
         .nav-menu a {
             color: var(--dark);
@@ -432,18 +403,19 @@
     </style>
 </head>
 <body>
-    <nav>
-            
-            <div class="company-name">Spectronic Technology Sdn Bhd</div>
-             <div class="hamburger" onclick="toggleMenu()">☰</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact Us</a>
-                <div class="datetime" id="datetime"></div>
-            </div>
-        </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo">Spectronic Technology Sdn Bhd</div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="services-hero">
         <div class="hero-content">
@@ -582,11 +554,14 @@
             </div>
         </div>
     </footer>
-   <script>
-    function toggleMenu() {
-      const nav = document.querySelector('.nav-links');
-      nav.classList.toggle('show');
-    }
-  </script>
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
