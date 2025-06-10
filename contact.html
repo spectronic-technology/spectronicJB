@@ -54,37 +54,17 @@
             gap: 3rem;
             list-style: none;
         }
-          .hamburger {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 200px;
-        z-index: 1000;
-        border-radius: 10px;
-        padding: 1rem;
-      }
+        .nav-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
 
-      .nav-links.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-      }
-    }
-
-        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
         .map-container {
             animation: fadeInUp 1s ease 0.6s;
             animation-fill-mode: both;
@@ -734,18 +714,18 @@
 </head>
 </head>
 <body>
-   <nav>
-            
-            <div class="company-name">Spectronic Technology Sdn Bhd</div>
-             <div class="hamburger" onclick="toggleMenu()">☰</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact Us</a>
-                <div class="datetime" id="datetime"></div>
-            </div>
-        </nav>
+    <nav  class="nav-container">
+        <a href="index.html" class="logo">
+            Spectronic Technology Sdn Bhd
+        </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <div class="contact-hero">
         <div class="hero-content">
@@ -860,11 +840,5 @@
             </div>
         </div>
     </footer>
-     <script>
-    function toggleMenu() {
-      const nav = document.querySelector('.nav-links');
-      nav.classList.toggle('show');
-    }
-
 </body>
 </html>
