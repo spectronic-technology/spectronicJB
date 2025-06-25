@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://spectronic-technology.github.io/spectronicJB/sitemap.xml
